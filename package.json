@@ -4,7 +4,19 @@
   "description": "Microservice for CRUID events and sending them to telegram service",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.ts"
   },
   "author": "idevtier",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "@types/winston": "^2.4.4",
+    "mongodb": "^4.7.0",
+    "winston": "^3.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  }
 }
