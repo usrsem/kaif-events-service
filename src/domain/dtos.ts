@@ -4,4 +4,5 @@ export interface EventDto {
     lineup: Map<Date, string>
     startDate: Date
     publishDate: Date
+    media: ArrayBuffer
 }
