@@ -3,13 +3,14 @@ import { Collection, ObjectId } from "mongodb";
 
 
 export interface EventRepositoryResult {
-    value?: EventDto;
+    value?: EventDto | EventDto[];
     error?: "not-found"
 }
 
 export interface EventRepository {
     save(event: EventDto): Promise<EventRepositoryResult>;
     get(id: string): Promise<EventRepositoryResult>;
+    getAll(): Promise<EventRepositoryResult>;
 }
 
 
@@ -29,6 +30,11 @@ export class MongoEventRepository implements EventRepository {
         }
 
         return { error: "not-found" };
+    }
+
+    async getAll(): Promise<EventRepositoryResult> {
+        const events = await this.events.find({}).toArray();
+        return { value: events.map(e => (e as unknown) as EventDto) };
     }
 }
 
