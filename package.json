@@ -4,24 +4,17 @@
   "description": "Microservice for CRUID events and sending them to telegram service",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.ts"
+    "start": "node index.js"
   },
   "author": "idevtier",
   "license": "MIT",
   "dependencies": {
     "@grpc/grpc-js": "^1.6.7",
     "@grpc/proto-loader": "^0.6.13",
-    "@types/node": "^18.0.0",
-    "@types/winston": "^2.4.4",
-    "grpc": "^1.24.11",
-    "mongodb": "^4.7.0",
-    "winston": "^3.7.2"
+    "mongodb": "^4.7.0"
   },
   "devDependencies": {
-    "grpc-tools": "^1.11.2",
-    "grpc_tools_node_protoc_ts": "^5.3.2",
-    "nodemon": "^2.0.16",
-    "ts-node": "^10.8.1",
-    "typescript": "^4.7.4"
-  }
+    "eslint": "^8.18.0"
+  },
+  "types": "types/kaif-events-service.d.ts"
 }
